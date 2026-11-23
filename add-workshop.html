@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artora Club - Add New Workshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mgr-page">
+<div class="site-frame">
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/artora-logo.png" alt="Artora Club Logo">
+            <div class="brand-copy">
+                <strong>Artora club</strong>
+                <span>Create, learn, connect</span>
+            </div>
+        </div>
+            <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="about.html">About Us</a>
+            <a href="member-dashboard.html">Member Dashboard</a>
+            <a href="manager-dashboard.html">Manager Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="breadcrumb"><a href="index.html">Home</a> &gt; <a href="manager-dashboard.html">Manager Dashboard</a> &gt; Add a new workshop</p>
+        <h1 class="page-title">Add new workshop</h1>
+        <p class="mgr-intro">Fill in the details below to add a new club offering.</p>
+
+        <!-- Add a New Workshop form -->
+        <form class="mgr-form workshop-form" id="workshop-form" action="manager-dashboard.html" method="post" enctype="multipart/form-data" novalidate onsubmit="return saveOffering()">
+
+            <label for="workshop-name" class="mgr-heading-label">Workshop name</label>
+            <input type="text" id="workshop-name" name="workshopName" placeholder="Enter workshop name" required>
+
+            <label for="workshop-image" class="mgr-heading-label">Image</label>
+            <div class="mgr-upload">
+                <img src="images/upload-photo-icon.png" alt="">
+                <p>upload photo</p>
+                <input type="file" id="workshop-image" name="workshopImage" accept="image/*" required>
+            </div>
+
+            <label for="workshop-price" class="mgr-heading-label">Price</label>
+            <input type="text" id="workshop-price" name="workshopPrice" placeholder="Enter price" required>
+
+            <label for="workshop-description" class="mgr-heading-label">Description</label>
+            <div class="mgr-description">
+                <textarea id="workshop-description" name="workshopDescription" rows="4" placeholder="Enter description ....." required oninput="countWords()"></textarea>
+                <span id="word-count" class="mgr-counter">0/100</span>
+            </div>
+
+            <div class="mgr-buttons">
+                <a href="manager-dashboard.html" class="mgr-btn">Cancel</a>
+                <button type="submit" class="mgr-btn">Submit</button>
+            </div>
+
+        </form>
+
+        <script>
+        // count the words in the description and keep it at 100 words
+        function countWords() {
+            var descBox = document.getElementById("workshop-description");
+            var parts = descBox.value.split(" ");
+            var words = [];
+            for (var i = 0; i < parts.length; i++) {
+                if (parts[i] != "") {
+                    words.push(parts[i]);
+                }
+            }
+            if (words.length > 100) {
+                words = words.slice(0, 100);
+                descBox.value = words.join(" ");
+            }
+            document.getElementById("word-count").innerHTML = words.length + "/100";
+        }
+
+        // load the saved offerings; an empty or damaged value gives an empty list
+        function loadOfferings() {
+            try { return JSON.parse(localStorage.getItem("artora-offerings")) || []; }
+            catch (e) { return []; }
+        }
+
+        // read the chosen image file as a data URL, then call done(dataUrl)
+        function readImage(file, done) {
+            var reader = new FileReader();
+            reader.onload = function () { done(reader.result); };
+            reader.onerror = function () { done(""); };
+            reader.readAsDataURL(file);
+        }
+
+        // check the form, then save the offering in localStorage
+        function saveOffering() {
+            var name = document.getElementById("workshop-name").value;
+            var file = document.getElementById("workshop-image").files[0];
+            var price = document.getElementById("workshop-price").value;
+            var description = document.getElementById("workshop-description").value;
+            var errors = "";
+
+            // empty fields (a field with spaces only counts as empty)
+            if (name.match(/^\s*$/)) {
+                errors += "- Workshop name is empty.\n";
+            } else if (name.match(/^\s*[0-9]/)) {
+                errors += "- Workshop name cannot start with numbers.\n";
+            }
+
+            if (!file) {
+                errors += "- Please choose an image.\n";
+            } else if (file.type.indexOf("image/") != 0) {
+                errors += "- The image must be an image file.\n";
+            }
+
+            if (price.match(/^\s*$/)) {
+                errors += "- Price is empty.\n";
+            } else if (!price.match(/^[0-9]+(\.[0-9]+)?$/)) {
+                errors += "- Price must be a number.\n";
+            }
+
+            if (description.match(/^\s*$/)) {
+                errors += "- Description is empty.\n";
+            }
+
+            if (errors != "") {
+                alert("Please fix the following:\n\n" + errors);
+                return false;
+            }
+
+            // read the chosen image, then save the offering
+            readImage(file, function (dataUrl) {
+                // array of objects: add the new offering to the old ones
+                var offerings = loadOfferings();
+                offerings.push({ name: name, price: price, description: description, image: dataUrl });
+                try {
+                    localStorage.setItem("artora-offerings", JSON.stringify(offerings));
+                } catch (e) {
+                    alert("Could not save the offering. The image may be too large.");
+                    return;
+                }
+
+                alert('The offering "' + name + '" was added successfully.');
+
+                // clear the form
+                document.getElementById("workshop-name").value = "";
+                document.getElementById("workshop-image").value = "";
+                document.getElementById("workshop-price").value = "";
+                document.getElementById("workshop-description").value = "";
+                document.getElementById("word-count").innerHTML = "0/100";
+            });
+
+            return false;
+        }
+        </script>
+
+    </main>
+
+    <footer class="site-footer">Copyright 2026 Artora Club | Contact info@artoraclub.com</footer>
+</div>
+<script src="theme.js"></script>
+</body>
+</html>

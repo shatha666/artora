@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artora Club - Manage Instructors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mgr-page">
+<div class="site-frame">
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/artora-logo.png" alt="Artora Club Logo">
+            <div class="brand-copy">
+                <strong>Artora club</strong>
+                <span>Create, learn, connect</span>
+            </div>
+        </div>
+            <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="about.html">About Us</a>
+            <a href="member-dashboard.html">Member Dashboard</a>
+            <a href="manager-dashboard.html">Manager Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="breadcrumb"><a href="index.html">Home</a> &gt; <a href="manager-dashboard.html">Manager Dashboard</a> &gt; Manage Instructors</p>
+        <h1 class="page-title">Manage instructors</h1>
+
+        <div class="mgr-panel">
+
+            <!-- Section 1: current instructors - select one or more, then Delete selected -->
+            <form id="instructors-form" action="manage-instructors.html" method="post" novalidate>
+
+                <h2>Current instructors</h2>
+
+                <div class="mgr-table-wrap">
+                <table class="mgr-table" id="instructors-table">
+                    <tr>
+                        <th>Instructor</th>
+                        <th>Speciality</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                    <!-- the instructors are added here by the script below -->
+                </table>
+                </div>
+
+                <div class="mgr-buttons">
+                    <button type="submit" id="delete-selected" class="mgr-btn mgr-btn-small" name="action" value="deleteSelected" onclick="return deleteSelected()">
+                        <img src="images/icon-delete.svg" alt=""> Delete selected
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Section 2: add a new instructor -->
+            <form id="add-instructor-form" class="mgr-add-form" action="manage-instructors.html" method="post" enctype="multipart/form-data" novalidate onsubmit="return addInstructor()">
+
+                <h2>Add new instructor</h2>
+
+                <div class="mgr-row">
+                    <label for="ins-name">Instructor name</label>
+                    <input type="text" id="ins-name" name="instructorName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="mgr-row">
+                    <label for="ins-speciality">Speciality</label>
+                    <input type="text" id="ins-speciality" name="instructorSpeciality" placeholder="Enter Speciality" required>
+                </div>
+
+                <div class="mgr-row">
+                    <label for="ins-email">Email</label>
+                    <input type="email" id="ins-email" name="instructorEmail" placeholder="Enter email" required>
+                </div>
+
+                <div class="mgr-row">
+                    <label for="ins-dob">Date of birth</label>
+                    <input type="date" id="ins-dob" name="instructorDob" required>
+                </div>
+
+                <div class="mgr-row">
+                    <label for="ins-skills">Skills</label>
+                    <input type="text" id="ins-skills" name="instructorSkills" placeholder="Enter skills" required>
+                </div>
+
+                <div class="mgr-row">
+                    <label for="ins-education">Education</label>
+                    <input type="text" id="ins-education" name="instructorEducation" placeholder="Enter your education" required>
+                </div>
+
+                <div class="mgr-row mgr-photo-row">
+                    <label for="ins-photo">Photo</label>
+                    <div class="mgr-upload">
+                        <img src="images/upload-photo-icon.png" alt="">
+                        <p>upload photo</p>
+                        <input type="file" id="ins-photo" name="instructorPhoto" accept="image/*" required>
+                    </div>
+                    <div class="mgr-photo-buttons">
+                        <a href="manager-dashboard.html" class="mgr-btn">Cancel</a>
+                        <button type="submit" class="mgr-btn">Add Instructor</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">Copyright 2026 Artora Club | Contact info@artoraclub.com</footer>
+</div>
+
+<script>
+    // array of objects: the activity leaders and instructors
+    var instructors = [
+        { name: "Maha Ali",   speciality: "Pottery",     email: "maha@gmail.com", photo: "images/maha-ali.png" },
+        { name: "Lina Ahmed", speciality: "Painting",    email: "lina@gmail.com", photo: "images/lina-ahmed.png" },
+        { name: "Nora Saleh", speciality: "Digital Art", email: "nora@gmail.com", photo: "images/nora-saleh.png" }
+    ];
+
+    var headerRow = "<tr><th>Instructor</th><th>Speciality</th><th>Email</th><th>Actions</th></tr>";
+
+    // draw the whole table from the array
+    function showInstructors() {
+        var html = headerRow;
+
+        for (var i = 0; i < instructors.length; i++) {
+            html += '<tr><td><label for="select-' + i + '" class="mgr-person">' +
+                    '<input type="checkbox" id="select-' + i + '" name="selectedInstructors" value="' + i + '">' +
+                    '<img src="' + instructors[i].photo + '" alt="' + instructors[i].name + '" class="mgr-avatar">' +
+                    instructors[i].name +
+                '</label></td>' +
+                '<td>' + instructors[i].speciality + '</td>' +
+                '<td>' + instructors[i].email + '</td>' +
+                '<td class="mgr-row-actions">' +
+                    '<button type="button" class="mgr-icon-btn" title="Edit ' + instructors[i].name + '">' +
+                        '<img src="images/icon-edit.svg" alt="Edit ' + instructors[i].name + '">' +
+                    '</button>' +
+                    '<button type="button" class="mgr-icon-btn" title="Delete ' + instructors[i].name + '" onclick="deleteOne(' + i + ')">' +
+                        '<img src="images/icon-delete.svg" alt="Delete ' + instructors[i].name + '">' +
+                    '</button>' +
+                '</td></tr>';
+        }
+
+        document.getElementById("instructors-table").innerHTML = html;
+
+        // keep the chosen theme after the table is drawn again
+        applySavedTheme();
+    }
+
+    // trash icon on one row: delete only that instructor (after confirm)
+    function deleteOne(index) {
+        if (confirm("Are you sure you want to delete " + instructors[index].name + "?")) {
+            instructors.splice(index, 1);
+            showInstructors();
+        }
+    }
+
+    // delete every checked instructor (after confirm)
+    function deleteSelected() {
+        var boxes = document.getElementsByName("selectedInstructors");
+        var remaining = [];
+        var selectedCount = 0;
+
+        for (var i = 0; i < boxes.length; i++) {
+            if (boxes[i].checked) {
+                selectedCount++;
+            } else {
+                remaining.push(instructors[i]);
+            }
+        }
+
+        if (selectedCount == 0) {
+            alert("Please select at least one instructor to delete.");
+            return false;
+        }
+
+        if (confirm("Are you sure you want to delete the selected instructor(s)?")) {
+            instructors = remaining;
+            showInstructors();
+        }
+        return false;
+    }
+
+    // read the chosen photo file as a data URL, then call done(photo)
+    function readPhoto(file, done) {
+        var reader = new FileReader();
+        reader.onload = function () { done(reader.result); };
+        reader.onerror = function () { done("images/upload-photo-icon.png"); };
+        reader.readAsDataURL(file);
+    }
+
+    // add a new instructor: check the form, then add them to the list
+    function addInstructor() {
+        var name = document.getElementById("ins-name").value;
+        var speciality = document.getElementById("ins-speciality").value;
+        var email = document.getElementById("ins-email").value;
+        var dob = document.getElementById("ins-dob").value;
+        var skills = document.getElementById("ins-skills").value;
+        var education = document.getElementById("ins-education").value;
+        var file = document.getElementById("ins-photo").files[0];
+        var errors = "";
+
+        // empty fields (a field with spaces only counts as empty)
+        if (name.match(/^\s*$/)) {
+            errors += "- Instructor name is empty.\n";
+        } else if (!name.match(/^[A-Za-z\u0600-\u06FF ]+$/)) {
+            errors += "- Instructor name must contain letters only.\n";
+        }
+
+        if (speciality.match(/^\s*$/)) {
+            errors += "- Speciality is empty.\n";
+        } else if (!speciality.match(/^[A-Za-z\u0600-\u06FF ]+$/)) {
+            errors += "- Speciality must contain letters only.\n";
+        }
+
+        if (email.match(/^\s*$/)) {
+            errors += "- Email is empty.\n";
+        } else if (!email.match(/^[^ @]+@[^ @]+\.[^ @]+$/)) {
+            errors += "- Email is not valid (example: name@mail.com).\n";
+        }
+
+        if (dob == "") {
+            errors += "- Date of birth is empty.\n";
+        }
+
+        if (skills.match(/^\s*$/)) {
+            errors += "- Skills is empty.\n";
+        }
+
+        if (education.match(/^\s*$/)) {
+            errors += "- Education is empty.\n";
+        }
+
+        if (!file) {
+            errors += "- Please choose a photo.\n";
+        } else if (file.type.indexOf("image/") != 0) {
+            errors += "- The photo must be an image file.\n";
+        }
+
+        if (errors != "") {
+            alert("Please fix the following:\n\n" + errors);
+            return false;
+        }
+
+        // read the chosen photo, then add the instructor to the list
+        readPhoto(file, function (photo) {
+            instructors.push({ name: name, speciality: speciality, email: email, photo: photo });
+            showInstructors();
+            alert('The instructor "' + name + '" was added successfully.');
+
+            // clear the form
+            document.getElementById("ins-name").value = "";
+            document.getElementById("ins-speciality").value = "";
+            document.getElementById("ins-email").value = "";
+            document.getElementById("ins-dob").value = "";
+            document.getElementById("ins-skills").value = "";
+            document.getElementById("ins-education").value = "";
+            document.getElementById("ins-photo").value = "";
+        });
+
+        return false;
+    }
+</script>
+
+<script src="theme.js"></script>
+<script>showInstructors();</script>
+</body>
+</html>

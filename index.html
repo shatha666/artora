@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artora Club - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="home.js"></script>
+</head>
+<body id="top">
+<div class="site-frame">
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/artora-logo.png" alt="Artora Club Logo">
+            <div class="brand-copy">
+                <strong>Artora club</strong>
+                <span>Create, learn, connect</span>
+            </div>
+        </div>
+        <button id="themeButton" class="theme-button" type="button" onclick="changeTheme()">Dark Theme</button>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="about.html">About Us</a>
+            <a href="member-dashboard.html">Member Dashboard</a>
+            <a href="manager-dashboard.html">Manager Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mission-box">
+            <h1>Artora club - Create, learn, connect</h1>
+            <p>Artora encourages creativity and artistic expression by helping people develop their artistic skills, discover new interests, and enjoy meaningful creative experiences.</p>
+        </section>
+
+        <section class="home-section">
+            <h2>Featured offering</h2>
+            <div class="featured-row">
+                <article class="featured-card">
+                    <img src="images/painting-workshop.svg" alt="Painting Workshop">
+                    <h3>painting workshop</h3>
+                    <p>learn painting basics</p>
+                    <p class="hover-info">Explore color mixing, brush techniques, and basic painting skills.</p>
+                </article>
+                <article class="featured-card">
+                    <img src="images/pottery-workshop.svg" alt="Pottery Workshop">
+                    <h3>pottery workshop</h3>
+                    <p>create with clay</p>
+                    <p class="hover-info">Learn basic pottery techniques and create your own clay artwork.</p>
+                </article>
+                <article class="featured-card">
+                    <img src="images/digital-art-workshop.svg" alt="Digital Art Workshop">
+                    <h3>digital art workshop</h3>
+                    <p>explore digital illustration</p>
+                    <p class="hover-info">Discover digital drawing and illustration techniques.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <h2>Member review</h2>
+            <div class="review-row">
+                <div class="review-card">
+                    <strong>Painting Workshop</strong>
+                    <span>Rating: ★★★★★</span>
+                    <p>Creative, clear, and beginner friendly.</p>
+                </div>
+                <div class="review-card">
+                    <strong>Pottery Workshop</strong>
+                    <span>Rating: ★★★★☆</span>
+                    <p>A fun introduction to working with clay.</p>
+                </div>
+                <div class="review-card">
+                    <strong>Digital Art Workshop</strong>
+                    <span>Rating: ★★★★★</span>
+                    <p>Useful techniques and an enjoyable experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-section event-section">
+            <h2>Upcoming art event</h2>
+            <div class="event-bar">Upcoming exhibition | community sketch day | open studio session</div>
+        </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" onclick="backToTop()">Back to Top</button>
+
+    <footer class="site-footer">
+        Copyright 2026 Artora Club | Contact info@artoraclub.com | Time: <span id="clock"></span>
+    </footer>
+</div>
+    <script src="theme.js"></script>
+</body>
+</html>

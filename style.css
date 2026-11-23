@@ -1,0 +1,2194 @@
+/* =========================================
+   ARTORA CLUB
+   FINAL CSS FOR CURRENT HTML FILES
+   ========================================= */
+
+
+/* =========================================
+   GENERAL
+   ========================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffaf5;
+    color: #333333;
+}
+
+.site-frame {
+    width: 90%;
+    margin: auto;
+
+    /* the frame is at least as tall as the screen, so the footer stays at the bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    padding: 15px;
+
+    /* main takes the free space and pushes the footer down */
+    flex: 1;
+}
+
+h1,
+h2,
+h3 {
+    color: #2f7773;
+}
+
+a {
+    color: #2f7773;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    border: 1px solid #999999;
+
+    padding: 10px;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+
+.brand img {
+    width: 65px;
+    height: 65px;
+
+    margin-right: 10px;
+}
+
+
+.brand-copy strong {
+    display: block;
+
+    color: #2f7773;
+}
+
+
+.brand-copy span {
+    display: block;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   NAVIGATION
+   FLEXBOX REQUIRED BY PHASE 2
+   ========================================= */
+
+.main-nav {
+    display: flex;
+}
+
+
+.main-nav a {
+    text-decoration: none;
+
+    color: #333333;
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 7px 10px;
+
+    margin-left: 4px;
+}
+
+
+.main-nav a:hover {
+    background-color: #2f7773;
+    color: white;
+}
+
+
+/* =========================================
+   HOME - MISSION
+   ========================================= */
+
+.mission-box {
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+.mission-box h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   HOME SECTIONS
+   ========================================= */
+
+.home-section {
+    margin-top: 20px;
+}
+
+
+.home-section h2 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   FEATURED OFFERINGS
+   3 FRAMES LIKE WIREFRAME
+   ========================================= */
+
+.featured-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.featured-card {
+    width: 30%;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 8px;
+}
+
+
+.featured-card img {
+    width: 100%;
+    height: 150px;
+}
+
+
+.featured-card h3 {
+    margin-top: 7px;
+    margin-bottom: 4px;
+}
+
+
+.featured-card p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+/* =========================================
+   OFFERING HOVER
+   ========================================= */
+
+.hover-info {
+    display: none;
+
+    background-color: #f3ece5;
+
+    border-top: 1px solid #999999;
+
+    padding: 6px;
+}
+
+
+.featured-card:hover .hover-info {
+    display: block;
+}
+
+
+/* =========================================
+   MEMBER REVIEWS
+   THREE SEPARATE FRAMES
+   ========================================= */
+
+.review-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.review-card {
+    width: 28%;
+    height: 110px;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 10px;
+}
+
+
+.review-card strong {
+    display: block;
+
+    color: #2f7773;
+
+    margin-bottom: 8px;
+}
+
+
+.review-card span {
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+
+.review-card p {
+    margin: 5px;
+}
+
+
+/* =========================================
+   UPCOMING ART EVENT
+   LONG THIN FRAME LIKE WIREFRAME
+   ========================================= */
+
+.event-section {
+    margin-top: 20px;
+}
+
+
+.event-section h2 {
+    margin-bottom: 8px;
+}
+
+
+.event-bar {
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 10px;
+}
+
+
+/* =========================================
+   WORKSHOPS - BREADCRUMB
+   ========================================= */
+
+.breadcrumb {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   WORKSHOPS TITLE
+   ========================================= */
+
+.page-title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   SEARCH + FILTER + SORT
+   ONE FRAME LIKE WIREFRAME
+   ========================================= */
+
+.workshop-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.search-control {
+    width: 45%;
+}
+
+
+.filter-control {
+    width: 25%;
+    text-align: center;
+}
+
+
+.sort-control {
+    width: 25%;
+    text-align: center;
+}
+
+
+.search-control label,
+.filter-control label,
+.sort-control label {
+    margin-right: 5px;
+}
+
+
+.search-control input {
+    width: 60%;
+
+    padding: 5px;
+}
+
+
+.filter-control select,
+.sort-control select {
+    width: 55%;
+
+    padding: 5px;
+}
+
+
+/* =========================================
+   WORKSHOP GRID
+   SIX WORKSHOPS = 3 x 2
+   ========================================= */
+
+.workshop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.workshop-card {
+    width: 30%;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.workshop-card img {
+    width: 100%;
+    height: 145px;
+}
+
+
+.workshop-card h2 {
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+
+.workshop-card p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+/* =========================================
+   SAVE LINK
+   TOP RIGHT LIKE WIREFRAME
+   ========================================= */
+
+.save-link {
+    display: block;
+
+    text-align: right;
+
+    text-decoration: none;
+
+    margin-bottom: 5px;
+}
+
+
+.save-link:hover {
+    color: #d89a62;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    background-color: #2f7773;
+
+    color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 8px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media screen and (max-width: 700px) {
+
+    .site-header {
+        flex-direction: column;
+    }
+
+
+    .main-nav {
+        flex-direction: column;
+    }
+
+
+    .main-nav a {
+        margin-top: 4px;
+    }
+
+
+    .featured-row {
+        flex-direction: column;
+    }
+
+
+    .featured-card {
+        width: 90%;
+
+        margin-bottom: 10px;
+    }
+
+
+    .review-row {
+        flex-direction: column;
+    }
+
+
+    .review-card {
+        width: 90%;
+        height: auto;
+
+        margin-bottom: 10px;
+    }
+
+
+    .workshop-controls {
+        flex-direction: column;
+    }
+
+
+    .search-control,
+    .filter-control,
+    .sort-control {
+        width: 100%;
+
+        margin-bottom: 10px;
+
+        text-align: left;
+    }
+
+
+    .workshop-grid {
+        flex-direction: column;
+    }
+
+
+    .workshop-card {
+        width: 90%;
+    }
+}
+
+/* =========================================
+   MANAGER PAGES
+   Club Manager Dashboard / Add New Workshop / Manage Instructors
+   Same colors, borders and buttons as the rest of the site
+   ========================================= */
+
+
+/* ---------- Shared manager pieces ---------- */
+
+.mgr-panel {
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 15px;
+}
+
+
+.mgr-btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: #333333;
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 8px 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+
+.mgr-btn:hover {
+    background-color: #2f7773;
+    color: white;
+}
+
+
+.mgr-btn-small {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+
+.mgr-btn img {
+    width: 15px;
+    height: 15px;
+
+    vertical-align: middle;
+}
+
+
+.mgr-btn:hover img {
+    filter: invert(1);
+}
+
+
+.mgr-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 15px;
+}
+
+
+.mgr-buttons .mgr-btn {
+    margin-left: 10px;
+}
+
+
+.mgr-upload {
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 12px;
+}
+
+
+.mgr-upload img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.mgr-upload p {
+    margin: 4px 0 8px;
+}
+
+
+/* ---------- Club Manager Dashboard ---------- */
+
+.mgr-workshops {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.mgr-card {
+    width: 30%;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    text-align: center;
+
+    padding: 8px;
+}
+
+
+.mgr-card img {
+    width: 100%;
+    height: 150px;
+}
+
+
+.mgr-card h3 {
+    margin-top: 7px;
+    margin-bottom: 4px;
+}
+
+
+.mgr-actions {
+    display: flex;
+}
+
+
+.mgr-actions .mgr-btn {
+    margin-right: 25px;
+}
+
+
+/* ---------- Add New Workshop ---------- */
+
+.mgr-intro {
+    margin-top: 0;
+}
+
+
+.mgr-form {
+    width: 60%;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    padding: 5px 20px 20px;
+}
+
+
+.mgr-heading-label {
+    display: block;
+
+    color: #2f7773;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+
+.mgr-form input[type="text"],
+.mgr-form input[type="number"],
+.mgr-form textarea,
+.mgr-row input[type="text"],
+.mgr-row input[type="email"],
+.mgr-row input[type="date"] {
+    border: 1px solid #999999;
+
+    background-color: white;
+
+    padding: 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+.mgr-form input[type="text"],
+.mgr-form input[type="number"],
+.mgr-description textarea,
+.mgr-form .mgr-upload,
+.mgr-row input,
+.mgr-photo-row .mgr-upload {
+    box-sizing: border-box;
+}
+
+
+.mgr-form input[type="text"],
+.mgr-form input[type="number"] {
+    width: 100%;
+}
+
+
+.mgr-description {
+    position: relative;
+}
+
+
+.mgr-description textarea {
+    display: block;
+
+    width: 100%;
+
+    padding-bottom: 24px;
+}
+
+
+.mgr-counter {
+    position: absolute;
+    right: 8px;
+    bottom: 5px;
+
+    font-size: 12px;
+    color: #999999;
+}
+
+
+/* ---------- Manage Instructors ---------- */
+
+.mgr-panel h2 {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+
+.mgr-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: white;
+}
+
+
+.mgr-table th,
+.mgr-table td {
+    border: 1px solid #999999;
+
+    padding: 8px;
+
+    text-align: center;
+}
+
+
+.mgr-table th {
+    background-color: #2f7773;
+    color: white;
+}
+
+
+.mgr-person {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+
+.mgr-person input {
+    margin-right: 8px;
+}
+
+
+.mgr-avatar {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    margin-right: 8px;
+}
+
+
+.mgr-row-actions {
+    white-space: nowrap;
+}
+
+
+.mgr-icon-btn {
+    background-color: transparent;
+
+    border: 1px solid transparent;
+
+    padding: 3px;
+
+    cursor: pointer;
+}
+
+
+.mgr-icon-btn:hover {
+    background-color: #f3ece5;
+    border-color: #999999;
+}
+
+
+.mgr-icon-btn img {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+}
+
+
+.mgr-add-form {
+    margin-top: 10px;
+}
+
+
+.mgr-row {
+    display: flex;
+    align-items: center;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+.mgr-row label {
+    width: 150px;
+
+    font-weight: bold;
+
+    padding-left: 15px;
+}
+
+
+.mgr-row input[type="text"],
+.mgr-row input[type="email"],
+.mgr-row input[type="date"] {
+    width: 320px;
+}
+
+
+.mgr-photo-row {
+    align-items: flex-start;
+}
+
+
+.mgr-photo-row .mgr-upload {
+    width: 320px;
+}
+
+
+.mgr-photo-buttons {
+    display: flex;
+
+    align-self: flex-end;
+
+    margin-left: 15px;
+}
+
+
+.mgr-photo-buttons .mgr-btn {
+    margin-right: 10px;
+}
+
+
+/* ---------- Manager pages on small screens ---------- */
+
+@media screen and (max-width: 700px) {
+
+    .mgr-workshops,
+    .mgr-actions,
+    .mgr-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .mgr-card {
+        width: 90%;
+
+        margin-bottom: 10px;
+    }
+
+
+    .mgr-actions .mgr-btn {
+        margin-bottom: 10px;
+    }
+
+
+    .mgr-form {
+        width: 100%;
+    }
+
+
+    .mgr-row label,
+    .mgr-row input[type="text"],
+    .mgr-row input[type="email"],
+    .mgr-row input[type="date"],
+    .mgr-photo-row .mgr-upload {
+        width: 100%;
+
+        padding-left: 0;
+    }
+
+
+    .mgr-photo-buttons {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+
+.mgr-table-wrap {
+  width: 100%;
+  overflow-x: auto;   /* table scrolls sideways on small screens */
+}
+
+/* Manager pages: footer always at the bottom of the screen, page fills the height */
+.mgr-page .site-frame {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mgr-page main {
+  flex: 1 0 auto;       /* content takes the free space between header and footer */
+}
+
+.mgr-page .mgr-actions-section {
+  margin-top: 56px;   /* space between My Workshops and Manager Actions */
+}
+
+
+.mgr-page .site-footer {
+  margin-top: auto;
+}
+
+/* =========================================
+   MEMBER PAGES - GREY BOX LIKE WIREFRAME
+   ========================================= */
+
+.member-box {
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 15px 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.member-box h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+.section-title {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   MEMBER DASHBOARD - REQUESTS TABLE
+   ========================================= */
+
+.requests-table {
+    width: 100%;
+
+    background-color: white;
+}
+
+
+.requests-table th,
+.requests-table td {
+    border: 1px solid #999999;
+
+    text-align: left;
+
+    padding: 10px 12px;
+}
+
+
+.requests-table th {
+    background-color: #2f7773;
+    color: white;
+}
+
+
+.status-pending {
+    color: #b7791f;
+    font-weight: bold;
+}
+
+
+.status-declined {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+
+.status-completed {
+    color: #2f7773;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   MEMBER DASHBOARD - MEMBER ACTIONS
+   FLEXBOX REQUIRED BY PHASE 2
+   ========================================= */
+
+.dashboard-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.dashboard-links a {
+    width: 25%;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #333333;
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    padding: 14px;
+}
+
+
+.dashboard-links a:hover {
+    background-color: #2f7773;
+    color: white;
+}
+
+
+/* =========================================
+   JOIN A WORKSHOP + WORKSHOP REVIEW FORMS
+   LABEL ON THE LEFT, FIELD ON THE RIGHT
+   ========================================= */
+
+.form-row {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+.form-row label {
+    width: 25%;
+}
+
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 45%;
+
+    padding: 9px;
+}
+
+
+.form-row .rating-select {
+    width: 20%;
+
+    margin-right: 10px;
+}
+
+
+.form-row textarea {
+    width: 65%;
+}
+
+
+.submit-btn {
+    background-color: #2f7773;
+    color: white;
+
+    border: 1px solid #999999;
+
+    padding: 10px 34px;
+
+    margin-left: 25%;
+}
+
+
+.submit-btn:hover {
+    background-color: #d89a62;
+}
+
+
+/* =========================================
+   MEMBER PAGES - RESPONSIVE DESIGN
+   ========================================= */
+
+@media screen and (max-width: 700px) {
+
+    .dashboard-links {
+        flex-direction: column;
+    }
+
+
+    .dashboard-links a {
+        width: auto;
+
+        margin-bottom: 8px;
+    }
+
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .form-row label {
+        width: 100%;
+
+        margin-bottom: 4px;
+    }
+
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea,
+    .form-row .rating-select {
+        width: 95%;
+    }
+
+
+    .submit-btn {
+        margin-left: 0px;
+    }
+}
+
+
+/* =========================================
+   ABOUT US + INSTRUCTOR PROFILE + MY FAVORITES
+   Same colors, borders and fonts as the rest of the site
+   ========================================= */
+
+/* ---------- About Us - intro + mission ---------- */
+
+.about-intro {
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    line-height: 1.6;
+
+    padding: 12px 15px;
+}
+
+
+.about-section {
+    margin-top: 20px;
+}
+
+
+.about-section h2 {
+    margin-bottom: 8px;
+}
+
+
+.about-section p {
+    margin-top: 4px;
+}
+
+
+.scroll-note {
+    font-size: 13px;
+    color: #777777;
+}
+
+
+/* ---------- About Us - instructors
+   HORIZONTAL SCROLL (FLEXBOX + OVERFLOW) ---------- */
+
+.instructor-row {
+    display: flex;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+}
+
+
+.instructor-card {
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 40%;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    padding: 10px;
+
+    margin-right: 15px;
+}
+
+
+.instructor-card:hover {
+    background-color: #f3ece5;
+}
+
+
+.instructor-card img {
+    width: 80px;
+    height: 80px;
+
+    border: 1px solid #999999;
+
+    margin-right: 12px;
+}
+
+
+.instructor-card a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.instructor-card a:hover {
+    color: #d89a62;
+}
+
+
+.instructor-card p {
+    margin-top: 4px;
+    margin-bottom: 0;
+
+    font-size: 14px;
+}
+
+
+/* ---------- About Us - Join Our Team form
+   TWO COLUMNS LIKE WIREFRAME ---------- */
+
+.team-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 15px;
+}
+
+
+.team-field {
+    display: flex;
+    align-items: center;
+
+    width: 48%;
+
+    margin-bottom: 12px;
+}
+
+
+.team-field label {
+    width: 35%;
+
+    font-weight: bold;
+}
+
+
+.team-field input {
+    box-sizing: border-box;
+
+    width: 65%;
+
+    border: 1px solid #999999;
+
+    background-color: white;
+
+    padding: 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+.team-submit {
+    justify-content: flex-end;
+}
+
+
+/* ---------- Instructor Profile - table ---------- */
+
+.profile-table {
+    width: 70%;
+
+    margin: 10px auto;
+
+    border-collapse: collapse;
+
+    background-color: white;
+}
+
+
+.profile-table th,
+.profile-table td {
+    border: 1px solid #999999;
+
+    padding: 10px 15px;
+
+    text-align: left;
+}
+
+
+.profile-table .profile-name {
+    background-color: #2f7773;
+    color: white;
+
+    font-size: 22px;
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+
+.profile-table .profile-label {
+    width: 40%;
+
+    background-color: #f3ece5;
+    color: #2f7773;
+}
+
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+
+    border: 1px solid #999999;
+}
+
+
+.profile-table .profile-contact {
+    background-color: #fffaf5;
+
+    text-align: center;
+}
+
+
+.profile-back {
+    text-align: center;
+}
+
+
+/* ---------- My Favorites - saved hearts ---------- */
+
+.saved-link {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+
+.saved-link:hover {
+    color: #2f7773;
+}
+
+
+/* ---------- About Us, Profile and Favorites on small screens ---------- */
+
+@media screen and (max-width: 700px) {
+
+    .instructor-card {
+        flex: 0 0 80%;
+    }
+
+
+    .team-form {
+        flex-direction: column;
+    }
+
+
+    .team-field {
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+
+    .team-field label,
+    .team-field input {
+        width: 100%;
+
+        margin-bottom: 4px;
+    }
+
+
+    .profile-table {
+        width: 100%;
+    }
+}
+
+/* Responsive Add Workshop form: fill available content width. */
+.mgr-form.workshop-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Additions from the team shared stylesheet (original ZIP styling retained). */
+.theme-button {
+    border: 1px solid #999999;
+    background-color: #2f7773;
+    color: white;
+    padding: 7px 10px;
+    margin-left: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    background-color: #d89a62;
+}
+
+.dark-theme {
+    background-color: #202425;
+    color: #f5f1eb;
+}
+
+.dark-theme .site-header,
+.dark-theme .mission-box,
+.dark-theme .featured-card,
+.dark-theme .review-card,
+.dark-theme .event-bar {
+    background-color: #303738;
+    color: #f5f1eb;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme a,
+.dark-theme .brand-copy strong,
+.dark-theme .review-card strong {
+    color: #9fd6d1;
+}
+
+.dark-theme .main-nav a,
+.dark-theme .hover-info {
+    background-color: #42494a;
+    color: #f5f1eb;
+}
+
+.dark-theme .main-nav a:hover {
+    background-color: #9fd6d1;
+    color: #202425;
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 55px;
+    border: 1px solid #777777;
+    background-color: #2f7773;
+    color: white;
+    padding: 9px 12px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.back-to-top:hover {
+    background-color: #d89a62;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .site-frame {
+        width: 96%;
+    }
+
+    .site-header {
+        align-items: stretch;
+    }
+
+    .brand {
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+
+    .theme-button {
+        width: 100%;
+        margin: 0 0 6px 0;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav a {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .featured-card,
+    .review-card,
+    .workshop-card {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .featured-card img,
+    .workshop-card img {
+        height: auto;
+    }
+
+    .search-control input,
+    .filter-control select,
+    .sort-control select {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .site-footer {
+        line-height: 1.6;
+    }
+}
+
+.dark-theme .site-frame,
+.dark-theme main,
+.dark-theme .workshop-card,
+.dark-theme .profile-table,
+.dark-theme .dashboard-card,
+.dark-theme .mgr-form,
+.dark-theme .team-form,
+.dark-theme fieldset,
+.dark-theme .home-section {
+    background-color: #303738;
+    color: #f5f1eb;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+    background-color: #42494a;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+.dark-theme .site-footer {
+    background-color: #202425;
+    color: #f5f1eb;
+}
+
+.dark-theme table,
+.dark-theme th,
+.dark-theme td {
+    background-color: #303738;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+.dark-theme th {
+    background-color: #3d6663;
+}
+
+.dark-theme button,
+.dark-theme input[type="submit"],
+.dark-theme input[type="button"] {
+    background-color: #42494a;
+    color: #f5f1eb;
+    border-color: #8b9394;
+}
+
+.dark-theme .member-actions,
+.dark-theme .dashboard-actions,
+.dark-theme .workshop-controls {
+    background-color: #303738;
+    color: #f5f1eb;
+}
+
+
+/* Dark mode additions for the three manager pages. Light styles above remain untouched. */
+body.dark-theme .mgr-panel,
+body.dark-theme .mgr-card,
+body.dark-theme .mgr-upload,
+body.dark-theme .mgr-form,
+body.dark-theme .mgr-table,
+body.dark-theme .mgr-table td,
+body.dark-theme .mgr-row-actions,
+body.dark-theme .mgr-intro {
+    background-color: #303738;
+    color: #f5f1eb;
+    border-color: #737e80;
+}
+body.dark-theme .mgr-panel { background-color: #292f30; }
+body.dark-theme .mgr-card,
+body.dark-theme .mgr-upload,
+body.dark-theme .mgr-form { background-color: #343c3d; }
+body.dark-theme .mgr-table th { background-color: #3d6663; color: #ffffff; }
+body.dark-theme .mgr-heading-label,
+body.dark-theme .mgr-row label { color: #a7ddd6; }
+body.dark-theme .mgr-btn,
+body.dark-theme a.mgr-btn {
+    background-color: #42494a;
+    border-color: #8b9394;
+    color: #f5f1eb;
+}
+body.dark-theme .mgr-btn:hover,
+body.dark-theme a.mgr-btn:hover {
+    background-color: #9fd6d1;
+    color: #202425;
+}
+body.dark-theme .mgr-icon-btn { background-color: transparent; }
+body.dark-theme .mgr-icon-btn:hover { background-color: #42494a; }
+body.dark-theme .mgr-form input[type="text"],
+body.dark-theme .mgr-form input[type="number"],
+body.dark-theme .mgr-form textarea,
+body.dark-theme .mgr-row input[type="text"],
+body.dark-theme .mgr-row input[type="email"],
+body.dark-theme .mgr-row input[type="date"] {
+    background-color: #42494a;
+    color: #f5f1eb;
+    border-color: #8b9394;
+}
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder { color: #d1d5d4; }
+body.dark-theme .theme-button { background-color: #3d6663; color: white; }
+body.dark-theme .theme-button:hover { background-color: #d89a62; color: #202425; }
+body.dark-theme .mgr-counter { color: #ccd3d1; }
+
+/* MANAGER PAGES - DARK THEME (matches the team dark-theme palette) */
+.dark-theme .mgr-panel,
+.dark-theme .mgr-card,
+.dark-theme .mgr-upload,
+.dark-theme .mgr-person,
+.dark-theme .mgr-intro,
+.dark-theme .mgr-form,
+.dark-theme .mgr-table,
+.dark-theme .mgr-table th,
+.dark-theme .mgr-table td {
+    background-color: #303738;
+    color: #f5f1eb;
+}
+
+.dark-theme .mgr-panel,
+.dark-theme .mgr-card,
+.dark-theme .mgr-upload,
+.dark-theme .mgr-form input,
+.dark-theme .mgr-form textarea,
+.dark-theme .mgr-row input,
+.dark-theme .mgr-table th,
+.dark-theme .mgr-table td {
+    border-color: #5d6a6c;
+}
+
+.dark-theme .mgr-btn,
+.dark-theme .mgr-btn-small,
+.dark-theme .mgr-buttons .mgr-btn,
+.dark-theme .mgr-photo-buttons .mgr-btn {
+    background-color: #3d4a4c;
+    color: #f5f1eb;
+    border-color: #5d6a6c;
+}
+
+.dark-theme .mgr-btn:hover,
+.dark-theme .mgr-actions .mgr-btn:hover {
+    background-color: #2f7773;
+    color: white;
+}
+
+.dark-theme .mgr-icon-btn {
+    color: #f5f1eb;
+}
+
+.dark-theme .mgr-icon-btn:hover {
+    background-color: #3d4a4c;
+    border-color: #5d6a6c;
+}
+
+.dark-theme .mgr-heading-label,
+.dark-theme .mgr-panel h2,
+.dark-theme .mgr-card h3 {
+    color: #9fd6d1;
+}
+
+.dark-theme .mgr-counter,
+.dark-theme .mgr-upload p {
+    color: #c9c2b8;
+}
+
+.dark-theme .mgr-table th {
+    background-color: #2f7773;
+    color: white;
+}
+
+
+/* =========================================
+   JOIN A WORKSHOP - NEW REQUESTS (PHASE 3)
+   ========================================= */
+
+.new-requests {
+    display: none;
+}
+
+
+/* =========================================
+   MEMBER PAGES - FOOTER AT THE BOTTOM (PHASE 3)
+   ========================================= */
+
+html,
+.member-page {
+    height: 100%;
+}
+
+
+.member-page .site-frame {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.member-page main {
+    flex: 1 0 auto;
+}
+
+
+/* =========================================
+   MEMBER PAGES - DARK THEME (PHASE 3)
+   ========================================= */
+
+.dark-theme .member-box {
+    background-color: #303738;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+
+.dark-theme .requests-table td {
+    background-color: #42494a;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+
+.dark-theme .requests-table th {
+    background-color: #3d6663;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+
+.dark-theme .dashboard-links a {
+    background-color: #42494a;
+    color: #f5f1eb;
+}
+
+
+.dark-theme .dashboard-links a:hover {
+    background-color: #9fd6d1;
+    color: #202425;
+}
+
+
+.dark-theme .requests-table .status-completed {
+    color: #9fd6d1;
+}
+
+
+.dark-theme .requests-table .status-pending {
+    color: #e9b66d;
+}
+
+
+.dark-theme .requests-table .status-declined {
+    color: #f08a7a;
+}
+
+
+/* =========================================
+   MEMBER PAGES - RESPONSIVE DESIGN
+   ========================================= */
+
+@media screen and (max-width: 700px) {
+
+    .dashboard-links {
+        flex-direction: column;
+    }
+
+
+    .dashboard-links a {
+        width: auto;
+
+        margin-bottom: 8px;
+    }
+
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .form-row label {
+        width: 100%;
+
+        margin-bottom: 4px;
+    }
+
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea,
+    .form-row .rating-select {
+        width: 95%;
+    }
+
+
+    .submit-btn {
+        margin-left: 0px;
+    }
+}
+
+
+/* =========================================
+   ABOUT US + INSTRUCTOR PROFILE + MY FAVORITES
+   Same colors, borders and fonts as the rest of the site
+   ========================================= */
+
+/* ---------- About Us - intro + mission ---------- */
+
+.about-intro {
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    line-height: 1.6;
+
+    padding: 12px 15px;
+}
+
+
+.about-section {
+    margin-top: 20px;
+}
+
+
+.about-section h2 {
+    margin-bottom: 8px;
+}
+
+
+.about-section p {
+    margin-top: 4px;
+}
+
+
+.scroll-note {
+    font-size: 13px;
+    color: #777777;
+}
+
+
+/* ---------- About Us - instructors
+   HORIZONTAL SCROLL (FLEXBOX + OVERFLOW) ---------- */
+
+.instructor-row {
+    display: flex;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+}
+
+
+.instructor-card {
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 40%;
+
+    background-color: white;
+
+    border: 1px solid #999999;
+
+    padding: 10px;
+
+    margin-right: 15px;
+}
+
+
+.instructor-card:hover {
+    background-color: #f3ece5;
+}
+
+
+.instructor-card img {
+    width: 80px;
+    height: 80px;
+
+    border: 1px solid #999999;
+
+    margin-right: 12px;
+}
+
+
+.instructor-card a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.instructor-card a:hover {
+    color: #d89a62;
+}
+
+
+.instructor-card p {
+    margin-top: 4px;
+    margin-bottom: 0;
+
+    font-size: 14px;
+}
+
+
+/* ---------- About Us - Join Our Team form
+   TWO COLUMNS LIKE WIREFRAME ---------- */
+
+.team-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    background-color: #f3ece5;
+
+    border: 1px solid #999999;
+
+    padding: 15px;
+}
+
+
+.team-field {
+    display: flex;
+    align-items: center;
+
+    width: 48%;
+
+    margin-bottom: 12px;
+}
+
+
+.team-field label {
+    width: 35%;
+
+    font-weight: bold;
+}
+
+
+.team-field input {
+    box-sizing: border-box;
+
+    width: 65%;
+
+    border: 1px solid #999999;
+
+    background-color: white;
+
+    padding: 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+.team-submit {
+    justify-content: flex-end;
+}
+
+
+/* ---------- Instructor Profile - table ---------- */
+
+.profile-table {
+    width: 70%;
+
+    margin: 10px auto;
+
+    border-collapse: collapse;
+
+    background-color: white;
+}
+
+
+.profile-table th,
+.profile-table td {
+    border: 1px solid #999999;
+
+    padding: 10px 15px;
+
+    text-align: left;
+}
+
+
+.profile-table .profile-name {
+    background-color: #2f7773;
+    color: white;
+
+    font-size: 22px;
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+
+.profile-table .profile-label {
+    width: 40%;
+
+    background-color: #f3ece5;
+    color: #2f7773;
+}
+
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+
+    border: 1px solid #999999;
+}
+
+
+.profile-table .profile-contact {
+    background-color: #fffaf5;
+
+    text-align: center;
+}
+
+
+.profile-back {
+    text-align: center;
+}
+
+
+/* ---------- My Favorites - saved hearts ---------- */
+
+.saved-link {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+
+.saved-link:hover {
+    color: #2f7773;
+}
+
+
+#fav-list {
+    justify-content: flex-start;
+    gap: 2%;
+}
+
+#fav-list .workshop-card {
+    box-sizing: border-box;
+}
+
+/* ---------- About Us, Profile and Favorites on small screens ---------- */
+
+@media screen and (max-width: 700px) {
+
+    .instructor-card {
+        flex: 0 0 80%;
+    }
+
+
+    .team-form {
+        flex-direction: column;
+    }
+
+
+    .team-field {
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+
+    .team-field label,
+    .team-field input {
+        width: 100%;
+
+        margin-bottom: 4px;
+    }
+
+
+    .profile-table {
+        width: 100%;
+    }
+}
+
+/* Responsive Add Workshop form: fill available content width. */
+.mgr-form.workshop-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* =========================================
+   ABOUT US + PROFILES + FAVORITES - DARK THEME
+   ========================================= */
+
+/* About Us  */
+.dark-theme .about-intro,
+.dark-theme .instructor-card {
+    background-color: #303738;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+.dark-theme .instructor-card:hover {
+    background-color: #42494a;
+}
+
+.dark-theme .scroll-note {
+    color: #c9c2b8;
+}
+
+/* About Us - Join Our Team */
+.dark-theme .team-field input {
+    background-color: #42494a;
+    color: #f5f1eb;
+    border-color: #777777;
+}
+
+/* Instructor Profile  */
+.dark-theme .profile-table .profile-label {
+    background-color: #3d6663;
+    color: #f5f1eb;
+}
+
+.dark-theme .profile-table .profile-contact {
+    background-color: #303738;
+    color: #f5f1eb;
+}
+

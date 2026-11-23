@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artora Club - About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+<div class="site-frame">
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/artora-logo.png" alt="Artora Club Logo">
+            <div class="brand-copy">
+                <strong>Artora club</strong>
+                <span>Create, learn, connect</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="about.html">About Us</a>
+            <a href="member-dashboard.html">Member Dashboard</a>
+            <a href="manager-dashboard.html">Manager Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="breadcrumb"><a href="index.html">Home</a> &gt; About Us</p>
+        <h1 class="page-title">About Us</h1>
+
+        <p class="about-intro">Artora Club is a creative community for everyone who loves art. We aim to provide a supportive space where people can learn new skills, explore their creativity, and connect with others who share the same passion.</p>
+
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>To inspire creativity and make art accessible to everyone.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Meet Our Instructors</h2>
+            <p class="scroll-note">Scroll to the side to see all instructors.</p>
+
+            <div class="instructor-row">
+                <div class="instructor-card">
+                    <img src="images/lina-ahmed.png" alt="Lina Ahmed">
+                    <div>
+                        <a href="lina-ahmed-profile.html">Lina Ahmed</a>
+                        <p>Painting Instructor</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="images/maha-ali.png" alt="Maha Ali">
+                    <div>
+                        <a href="maha-ali-profile.html">Maha Ali</a>
+                        <p>Pottery Instructor</p>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <img src="images/nora-saleh.png" alt="Nora Saleh">
+                    <div>
+                        <a href="nora-saleh-profile.html">Nora Saleh</a>
+                        <p>Digital Art Instructor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Join Our Team</h2>
+
+            <form class="team-form" action="about.html" method="post" enctype="multipart/form-data">
+                <div class="team-field">
+                    <label for="team-name">Name</label>
+                   <input type="text" id="team-name" name="teamName" required pattern="[^0-9].*" title="Name cannot start with a number">
+                </div>
+                <div class="team-field">
+                    <label for="team-photo">Photo</label>
+                    <input type="file" id="team-photo" name="teamPhoto" accept="image/*" required>
+                </div>
+                <div class="team-field">
+                    <label for="team-dob">Date of Birth</label>
+                   <input type="date" id="team-dob" name="teamDob" required max="2008-12-31">
+                </div>
+                <div class="team-field">
+                    <label for="team-email">Email</label>
+                    <input type="email" id="team-email" name="teamEmail" required>
+                </div>
+                <div class="team-field">
+                    <label for="team-expertise">Specialty</label>
+                    <input type="text" id="team-expertise" name="teamExpertise" required>
+                </div>
+                <div class="team-field">
+                    <label for="team-skills">Skills</label>
+                    <input type="text" id="team-skills" name="teamSkills" required>
+                </div>
+                <div class="team-field">
+                    <label for="team-education">Education</label>
+                    <input type="text" id="team-education" name="teamEducation" required>
+                </div>
+                <div class="team-field team-submit">
+                    <button type="submit" class="mgr-btn">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">Copyright 2026 Artora Club | Contact info@artoraclub.com</footer>
+</div>
+<script src="about.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

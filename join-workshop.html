@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a Workshop | Artora Club</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="member.js"></script>
+</head>
+<body class="member-page">
+<div class="site-frame">
+
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/artora-logo.png" alt="Artora Club logo">
+            <div class="brand-copy">
+                <strong>Artora club</strong>
+                <span>Create, learn, connect</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="about.html">About Us</a>
+            <a href="member-dashboard.html">Member Dashboard</a>
+            <a href="manager-dashboard.html">Manager Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="breadcrumb"><a href="index.html">Home</a> &gt; <a href="member-dashboard.html">Member Dashboard</a> &gt; Join a Workshop</p>
+
+        <h1 class="page-title">Join a Workshop</h1>
+
+        <form id="join-form" class="member-box" action="#" method="post" onsubmit="return validateJoin()">
+            <h2>Workshop Participation Form</h2>
+
+            <div class="form-row">
+                <label for="workshop">Choose workshop:</label>
+                <select id="workshop" name="workshop">
+                    <option value="">Select workshop</option>
+                    <option value="Painting workshop">Painting workshop</option>
+                    <option value="Pottery workshop">Pottery workshop</option>
+                    <option value="Digital art workshop">Digital art workshop</option>
+                    <option value="Calligraphy workshop">Calligraphy workshop</option>
+                    <option value="Sketching workshop">Sketching workshop</option>
+                    <option value="Mixed media workshop">Mixed media workshop</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your Full Name">
+            </div>
+
+            <div class="form-row">
+                <label for="preferred-date">Preferred Date:</label>
+                <input type="date" id="preferred-date" name="preferred-date">
+            </div>
+
+            <input type="submit" class="submit-btn" value="Submit">
+        </form>
+
+        <section id="new-requests" class="member-box new-requests">
+            <h2>My New Requests</h2>
+            <table id="new-requests-table" class="requests-table">
+                <tr>
+                    <th>Workshop name</th>
+                    <th>Member name</th>
+                    <th>Preferred date</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        Copyright 2026 Artora Club | Contact info@artoraclub.com
+    </footer>
+
+</div>
+    <script src="theme.js"></script>
+</body>
+</html>
