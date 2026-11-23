@@ -793,7 +793,7 @@ a {
 
 
 .mgr-person {
-    display: flex;
+    display: block;
     align-items: center;
 
     cursor: pointer;
@@ -1172,6 +1172,19 @@ a {
 
     .submit-btn {
         margin-left: 0px;
+    }
+
+
+    .member-box {
+        padding: 10px;
+    }
+
+
+    .requests-table th,
+    .requests-table td {
+        padding: 4px;
+
+        font-size: 14px;
     }
 }
 
